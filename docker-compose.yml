@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mongo:
+    container_name: mongo-db
+    build: .
+    volumes:
+      - type: bind
+        source: .
+        target: /root/mongo-db
+    working_dir: /root/mongo-db
+    entrypoint: bash
+    stdin_open: true
+    tty: true
+    ports:
+      - 47017:27017
